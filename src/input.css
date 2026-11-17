@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+  :root { color-scheme: only light; }
   [id] { scroll-margin-top: 72px; }
 }
 
@@ -11,7 +12,7 @@
   .phone img { @apply block w-full h-auto; }
   .pill { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition; }
   .pill-dark { @apply pill bg-night-900 text-white hover:bg-night-700; }
-  .pill-light { @apply pill bg-white text-night-900 hover:bg-brand-50; }
+  .pill-light { @apply pill bg-white text-night-900 ring-1 ring-inset ring-black/10 hover:bg-brand-50; }
   .pill-brand { @apply pill bg-brand-700 text-white hover:bg-brand-800; }
   .pill-outline { @apply pill border border-current; }
   .pill-off { @apply pill border border-dashed border-gray-300 text-gray-400 cursor-not-allowed; }

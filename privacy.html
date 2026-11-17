@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Synapse Privacy Policy</title><meta name="description" content="How Synapse handles your data.">
+<link rel="stylesheet" href="style.css"></head><body><main>
+<header><div class="logo">S</div><strong>Synapse</strong><nav><a href="./">Home</a><a href="privacy.html">Privacy</a></nav></header>
+<h1>Privacy policy</h1>
+<p class="lead">Last updated: 17 November 2026</p>
+<p>Synapse is built so that we cannot read your vault. This policy explains what data the Synapse app and server handle, and why.</p>
+
+<h2>Your vault</h2>
+<ul>
+<li>Your passwords, cards, notes and other items are encrypted on your device before they are stored or synced, using a key derived from your master password.</li>
+<li>Your master password never leaves your device. We cannot see it, recover it or reset it.</li>
+<li>The Synapse server stores only encrypted vault data plus the metadata needed to sync it (item IDs, revision numbers and timestamps).</li>
+</ul>
+
+<h2>Account information</h2>
+<p>When you sign in with Google or GitHub, we receive and store:</p>
+<ul>
+<li>your account identifier at that provider, and</li>
+<li>your email address, if the provider shares it.</li>
+</ul>
+<p>We also store a randomly generated Synapse username, which you can change. We use this information only to identify your account and to let other users find you when you share items with them. We do not use it for advertising.</p>
+
+<h2>Google user data</h2>
+<p>Synapse requests these Google permissions:</p>
+<ul>
+<li><strong>Sign-in (openid, email, profile):</strong> used only to sign you in and link your Google account to your Synapse account.</li>
+<li><strong>Google Drive app data folder (drive.appdata):</strong> requested only if you turn on "Back up to Google Drive". Synapse uses it to save, list, download and delete its own encrypted backup files in a hidden folder of your Drive. Synapse cannot see, read or change any other files in your Drive. Backup files are encrypted on your device, so neither Google nor Synapse can read them. They go straight from your phone to Google; they never pass through the Synapse server.</li>
+</ul>
+<p>Synapse's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. We do not sell Google user data, use it for advertising, or let humans read it.</p>
+
+<h2>Security and device data</h2>
+<ul>
+<li>Signed-in sessions: the device name, the time of sign-in and the last time the session was used. You can see these and sign sessions out from the app.</li>
+<li>Security events: for example, a new sign-in. These are shown to you in the app.</li>
+<li>Push notifications: a Firebase Cloud Messaging token, so that your other devices can be told to sync. Notifications never contain vault contents.</li>
+<li>Exposed password checks use the k-anonymity range API of Have I Been Pwned. Only the first 5 characters of a SHA-1 hash leave your device, never the password itself.</li>
+</ul>
+
+<h2>Sharing</h2>
+<p>When you share an item, it is encrypted for each recipient's public key on your device. The server stores the encrypted item and who it is shared with, but cannot read the item.</p>
+
+<h2>Retention and deletion</h2>
+<p>You can delete your account from Settings → Account. This removes your account, sessions and encrypted vault from the server. Google Drive backups stay in your Drive until you remove Synapse's access in your Google Account settings (which deletes its hidden app data) or delete them yourself.</p>
+
+<h2>What we don't do</h2>
+<ul>
+<li>No ads.</li>
+<li>No sale of personal data.</li>
+<li>No third-party analytics or tracking SDKs.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Questions or requests: <a href="https://github.com/anuragjh/synapse-app/issues">open an issue</a>.</p>
+<footer>Synapse · <a href="./">Home</a></footer>
+</main></body></html>

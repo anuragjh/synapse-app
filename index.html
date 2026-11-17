@@ -49,9 +49,9 @@
   </div>
   <div class="mx-auto max-w-[1400px] overflow-hidden rounded-[28px] bg-gradient-to-b from-brand-700 via-brand-500 to-brand-300 px-4 pt-12 sm:pt-16">
     <div class="flex items-end justify-center gap-4 sm:gap-8">
-      <div class="phone hidden w-[210px] translate-y-10 md:block lg:w-[240px]"><img src="assets/screens/vault-indigo.webp" alt="Vault list" width="540" height="1086"></div>
-      <div class="phone w-[240px] sm:w-[280px] lg:w-[300px]"><img src="assets/screens/home-dark.webp" alt="Synapse home screen with security score and quick actions" width="540" height="1086"></div>
-      <div class="phone hidden w-[210px] translate-y-10 md:block lg:w-[240px]"><img src="assets/screens/item-totp.webp" alt="Login with a live 2FA code" width="540" height="1086"></div>
+      <div class="phone hidden w-[210px] translate-y-10 md:block lg:w-[240px]"><img src="assets/screens/v3-vault-light.webp" alt="Vault with service icons in light theme" width="540" height="1086"></div>
+      <div class="phone w-[240px] sm:w-[280px] lg:w-[300px]"><img src="assets/screens/v3-home.webp" alt="Synapse home screen with avatar, security score and quick actions" width="540" height="1086"></div>
+      <div class="phone hidden w-[210px] translate-y-10 md:block lg:w-[240px]"><img src="assets/screens/v3-avatars.webp" alt="Choosing an avatar" width="540" height="1086"></div>
     </div>
   </div>
 </section>
@@ -83,6 +83,51 @@
       <div><svg class="h-8 w-8 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1.2-3.3 3.8-5 7-5s5.8 1.7 7 5"/></svg><h3 class="mt-4 text-lg font-semibold">Make it yours</h3><p class="mt-2 leading-relaxed text-muted">Pick from 50 avatars and 10 app icon styles. Logins get their service’s icon automatically, and you can choose another.</p></div>
       <div><svg class="h-8 w-8 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg><h3 class="mt-4 text-lg font-semibold">Updates built in</h3><p class="mt-2 leading-relaxed text-muted">New versions download on Wi-Fi and are checked against the release signing key before Android installs them.</p></div>
       <div><svg class="h-8 w-8 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-8 6 6 0 0 1 11.5 1.5A3.5 3.5 0 0 1 17.5 18H7Z"/><path d="M12 11v5m0-5-2 2m2-2 2 2"/></svg><h3 class="mt-4 text-lg font-semibold">Easy to switch</h3><p class="mt-2 leading-relaxed text-muted">Import from Chrome, Firefox, Bitwarden, 1Password, LastPass or Dashlane with a CSV file.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- New in 1.0.3 -->
+<section id="new" class="border-t border-line">
+  <div class="mx-auto max-w-7xl px-5 py-24 sm:py-32">
+    <div class="grid items-end gap-6 lg:grid-cols-2">
+      <div>
+        <p class="label">New in 1.0.3</p>
+        <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">More personal. Still private.</h2>
+      </div>
+      <p class="text-lg leading-relaxed text-muted">Avatars, icons and languages all live on your phone. Choosing them costs nothing in privacy and nothing in server time.</p>
+    </div>
+    <div class="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
+      <figure>
+        <div class="phone !w-full"><img loading="lazy" src="assets/screens/v3-avatars.webp" alt="Avatar picker with 50 avatars" width="540" height="1086"></div>
+        <figcaption class="mt-5"><p class="font-semibold">50 avatars</p><p class="mt-1 text-sm leading-relaxed text-muted">One is picked for you. Change it any time; it follows your account, encrypted.</p></figcaption>
+      </figure>
+      <figure>
+        <div class="phone !w-full"><img loading="lazy" src="assets/screens/v3-icon-picker.webp" alt="Icon chooser with brand icons" width="540" height="1086"></div>
+        <figcaption class="mt-5"><p class="font-semibold">Service icons</p><p class="mt-1 text-sm leading-relaxed text-muted">87 brands matched on your phone, in your theme’s colours. Pick another anytime.</p></figcaption>
+      </figure>
+      <figure>
+        <div class="phone !w-full"><img loading="lazy" src="assets/screens/v3-app-icon.webp" alt="App icon chooser with 10 styles" width="540" height="1086"></div>
+        <figcaption class="mt-5"><p class="font-semibold">10 app icons</p><p class="mt-1 text-sm leading-relaxed text-muted">From Emerald to Midnight. Your pick shows on the home screen and inside the app.</p></figcaption>
+      </figure>
+      <figure>
+        <div class="phone !w-full"><img loading="lazy" src="assets/screens/v3-language.webp" alt="Language screen" width="540" height="1086"></div>
+        <figcaption class="mt-5"><p class="font-semibold">Your language</p><p class="mt-1 text-sm leading-relaxed text-muted">English and हिन्दी today, with more on the way. Switch without leaving the app.</p></figcaption>
+      </figure>
+    </div>
+    <div class="mt-20 grid gap-6 lg:grid-cols-3">
+      <div class="flex items-center gap-6 rounded-3xl bg-brand-50/70 p-6">
+        <div class="phone !w-[120px] shrink-0 !rounded-[1.4rem] !border-[5px]"><img loading="lazy" src="assets/screens/v3-version.webp" alt="App version screen" width="540" height="1086"></div>
+        <div><p class="font-semibold">Updates inside the app</p><p class="mt-1 text-sm leading-relaxed text-muted">Downloaded on Wi-Fi and checked against the release signing key before Android installs them.</p></div>
+      </div>
+      <div class="flex items-center gap-6 rounded-3xl bg-brand-50/70 p-6">
+        <div class="phone !w-[120px] shrink-0 !rounded-[1.4rem] !border-[5px]"><img loading="lazy" src="assets/screens/v3-delete.webp" alt="Delete confirmation dialog" width="540" height="1086"></div>
+        <div><p class="font-semibold">Delete, safely</p><p class="mt-1 text-sm leading-relaxed text-muted">Synapse asks first, then gives you a few seconds to undo, even after the change has synced.</p></div>
+      </div>
+      <div class="flex items-center gap-6 rounded-3xl bg-brand-50/70 p-6">
+        <div class="phone !w-[120px] shrink-0 !rounded-[1.4rem] !border-[5px]"><img loading="lazy" src="assets/screens/v3-home-light.webp" alt="Home screen in light theme" width="540" height="1086"></div>
+        <div><p class="font-semibold">Material 3, refined</p><p class="mt-1 text-sm leading-relaxed text-muted">Expressive shapes, a morphing loader and native slide navigation, in light or dark.</p></div>
+      </div>
     </div>
   </div>
 </section>

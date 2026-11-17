@@ -26,31 +26,49 @@
     </a>
     <nav class="hidden items-center gap-8 text-[15px] text-white/70 md:flex">
       <a href="./#features" class="hover:text-white">Features</a>
+      <a href="./#new" class="hover:text-white">What's new</a>
       <a href="./#security" class="hover:text-white">Security</a>
       <a href="./#pricing" class="hover:text-white">Pricing</a>
       <a href="./#about" class="hover:text-white">About</a>
     </nav>
-    <a href="./#download" class="pill-light !px-5 !py-2 text-sm">Download</a>
+    <div class="flex items-center gap-2">
+      <a href="./#download" class="pill-light !px-4 !py-2 text-sm sm:!px-5">Download</a>
+      <details class="group relative md:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full text-white/80 hover:bg-white/10" aria-label="Menu">
+          <svg class="h-6 w-6 group-open:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="hidden h-6 w-6 group-open:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </summary>
+        <nav class="absolute right-0 top-12 w-56 overflow-hidden rounded-2xl border border-white/10 bg-night-800 py-2 text-[15px] shadow-2xl shadow-black/50">
+          <a href="./#features" class="block px-5 py-3 text-white/80 hover:bg-white/5 hover:text-white">Features</a>
+          <a href="./#new" class="block px-5 py-3 text-white/80 hover:bg-white/5 hover:text-white">What's new</a>
+          <a href="./#security" class="block px-5 py-3 text-white/80 hover:bg-white/5 hover:text-white">Security</a>
+          <a href="./#pricing" class="block px-5 py-3 text-white/80 hover:bg-white/5 hover:text-white">Pricing</a>
+          <a href="./#about" class="block px-5 py-3 text-white/80 hover:bg-white/5 hover:text-white">About</a>
+          <a href="privacy.html" class="block border-t border-white/10 px-5 py-3 text-white/60 hover:bg-white/5 hover:text-white">Privacy</a>
+          <a href="terms.html" class="block px-5 py-3 text-white/60 hover:bg-white/5 hover:text-white">Terms</a>
+        </nav>
+      </details>
+    </div>
   </div>
 </header>
 
 <main>
 <!-- Hero (dark, centred, product panel) -->
 <section class="bg-night-900 px-3 pb-3 text-white">
-  <div class="mx-auto max-w-4xl px-5 pb-14 pt-20 text-center sm:pt-28">
+  <div class="mx-auto max-w-4xl px-5 pb-12 pt-14 text-center sm:pb-14 sm:pt-28">
     <img src="assets/icon.svg" alt="Synapse app icon" class="mx-auto h-16 w-16 rounded-2xl shadow-lg shadow-black/40 sm:h-20 sm:w-20">
-    <h1 class="h-display mt-8 text-[44px] leading-[1.02] sm:text-7xl lg:text-[88px]">Your passwords.<br>Only yours.</h1>
-    <p class="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-white/70">Synapse is a password manager for Android that encrypts everything on your phone before it's stored or synced. We can't read your vault, and it's free.</p>
-    <div class="mt-9 flex flex-wrap justify-center gap-3">
+    <h1 class="h-display mt-8 text-[38px] leading-[1.05] sm:text-7xl sm:leading-[1.02] lg:text-[88px]">Your passwords.<br>Only yours.</h1>
+    <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:mt-7 sm:text-lg">Synapse is a password manager for Android that encrypts everything on your phone before it's stored or synced. We can't read your vault, and it's free.</p>
+    <div class="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-9 sm:flex-row sm:items-center">
       <a href="https://github.com/anuragjh/synapse-app/releases/latest/download/synapse.apk" class="pill-light">Download for Android</a>
       <a href="#security" class="pill-outline text-white/90 hover:text-white">How it works</a>
     </div>
     <p class="mt-5 text-sm text-white/45">Version 1.0.3 · Android 8.0 and later · Free, no limits</p>
   </div>
-  <div class="mx-auto max-w-[1400px] overflow-hidden rounded-[28px] bg-gradient-to-b from-brand-700 via-brand-500 to-brand-300 px-4 pt-12 sm:pt-16">
+  <div class="mx-auto max-w-[1400px] overflow-hidden rounded-[24px] bg-gradient-to-b from-brand-700 via-brand-500 to-brand-300 px-4 pt-10 sm:rounded-[28px] sm:pt-16">
     <div class="flex items-end justify-center gap-4 sm:gap-8">
       <div class="phone hidden w-[210px] translate-y-10 md:block lg:w-[240px]"><img src="assets/screens/v3-vault-light.webp" alt="Vault with service icons in light theme" width="540" height="1086"></div>
-      <div class="phone w-[240px] sm:w-[280px] lg:w-[300px]"><img src="assets/screens/v3-home.webp" alt="Synapse home screen with avatar, security score and quick actions" width="540" height="1086"></div>
+      <div class="phone !w-[230px] sm:!w-[280px] lg:!w-[300px]"><img src="assets/screens/v3-home.webp" alt="Synapse home screen with avatar, security score and quick actions" width="540" height="1086"></div>
       <div class="phone hidden w-[210px] translate-y-10 md:block lg:w-[240px]"><img src="assets/screens/v3-avatars.webp" alt="Choosing an avatar" width="540" height="1086"></div>
     </div>
   </div>
@@ -67,14 +85,14 @@
 </section>
 
 <!-- Features: heading left, icon grid right -->
-<section id="features" class="mx-auto max-w-7xl px-5 py-24 sm:py-32">
-  <div class="grid gap-14 lg:grid-cols-3">
+<section id="features" class="mx-auto max-w-7xl px-5 py-16 sm:py-24 lg:py-32">
+  <div class="grid gap-10 lg:grid-cols-3 lg:gap-14">
     <div>
       <p class="label">Password manager</p>
-      <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">Everything you need. Nothing you pay for.</h2>
+      <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">Everything you need. Nothing you pay for.</h2>
       <p class="mt-5 text-lg text-muted">The features people pay a yearly subscription for, built in and free.</p>
     </div>
-    <div class="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-2">
+    <div class="grid gap-x-10 gap-y-9 sm:grid-cols-2 sm:gap-y-12 lg:col-span-2">
       <div><svg class="h-8 w-8 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg><h3 class="mt-4 text-lg font-semibold">Zero-knowledge encryption</h3><p class="mt-2 leading-relaxed text-muted">Logins, cards, notes, Wi-Fi, SSH and API keys are encrypted on your phone. The server only ever stores ciphertext.</p></div>
       <div><svg class="h-8 w-8 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h6"/><path d="m15 16 2 2 4-4"/></svg><h3 class="mt-4 text-lg font-semibold">Autofill and passkeys</h3><p class="mt-2 leading-relaxed text-muted">Fills your logins in apps and websites, saves new ones, and works as a passkey provider on Android 14.</p></div>
       <div><svg class="h-8 w-8 text-brand-600" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 3"/></svg><h3 class="mt-4 text-lg font-semibold">Built-in 2FA codes</h3><p class="mt-2 leading-relaxed text-muted">Keep one-time codes next to the login they protect. Scan the QR code or paste the setup key.</p></div>
@@ -89,15 +107,15 @@
 
 <!-- New in 1.0.3 -->
 <section id="new" class="border-t border-line">
-  <div class="mx-auto max-w-7xl px-5 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-5 py-16 sm:py-24 lg:py-32">
     <div class="grid items-end gap-6 lg:grid-cols-2">
       <div>
         <p class="label">New in 1.0.3</p>
-        <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">More personal. Still private.</h2>
+        <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">More personal. Still private.</h2>
       </div>
       <p class="text-lg leading-relaxed text-muted">Avatars, icons and languages all live on your phone. Choosing them costs nothing in privacy and nothing in server time.</p>
     </div>
-    <div class="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
+    <div class="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 sm:mt-16 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
       <figure>
         <div class="phone !w-full"><img loading="lazy" src="assets/screens/v3-avatars.webp" alt="Avatar picker with 50 avatars" width="540" height="1086"></div>
         <figcaption class="mt-5"><p class="font-semibold">50 avatars</p><p class="mt-1 text-sm leading-relaxed text-muted">One is picked for you. Change it any time; it follows your account, encrypted.</p></figcaption>
@@ -115,17 +133,17 @@
         <figcaption class="mt-5"><p class="font-semibold">Your language</p><p class="mt-1 text-sm leading-relaxed text-muted">English and हिन्दी today, with more on the way. Switch without leaving the app.</p></figcaption>
       </figure>
     </div>
-    <div class="mt-20 grid gap-6 lg:grid-cols-3">
-      <div class="flex items-center gap-6 rounded-3xl bg-brand-50/70 p-6">
-        <div class="phone !w-[120px] shrink-0 !rounded-[1.4rem] !border-[5px]"><img loading="lazy" src="assets/screens/v3-version.webp" alt="App version screen" width="540" height="1086"></div>
+    <div class="mt-14 grid gap-4 sm:mt-20 sm:gap-6 lg:grid-cols-3">
+      <div class="flex items-center gap-5 rounded-3xl bg-brand-50/70 p-5 sm:gap-6 sm:p-6">
+        <div class="phone !w-[96px] shrink-0 !rounded-[1.2rem] !border-[4px] sm:!w-[120px] sm:!rounded-[1.4rem] sm:!border-[5px]"><img loading="lazy" src="assets/screens/v3-version.webp" alt="App version screen" width="540" height="1086"></div>
         <div><p class="font-semibold">Updates inside the app</p><p class="mt-1 text-sm leading-relaxed text-muted">Downloaded on Wi-Fi and checked against the release signing key before Android installs them.</p></div>
       </div>
-      <div class="flex items-center gap-6 rounded-3xl bg-brand-50/70 p-6">
-        <div class="phone !w-[120px] shrink-0 !rounded-[1.4rem] !border-[5px]"><img loading="lazy" src="assets/screens/v3-delete.webp" alt="Delete confirmation dialog" width="540" height="1086"></div>
+      <div class="flex items-center gap-5 rounded-3xl bg-brand-50/70 p-5 sm:gap-6 sm:p-6">
+        <div class="phone !w-[96px] shrink-0 !rounded-[1.2rem] !border-[4px] sm:!w-[120px] sm:!rounded-[1.4rem] sm:!border-[5px]"><img loading="lazy" src="assets/screens/v3-delete.webp" alt="Delete confirmation dialog" width="540" height="1086"></div>
         <div><p class="font-semibold">Delete, safely</p><p class="mt-1 text-sm leading-relaxed text-muted">Synapse asks first, then gives you a few seconds to undo, even after the change has synced.</p></div>
       </div>
-      <div class="flex items-center gap-6 rounded-3xl bg-brand-50/70 p-6">
-        <div class="phone !w-[120px] shrink-0 !rounded-[1.4rem] !border-[5px]"><img loading="lazy" src="assets/screens/v3-home-light.webp" alt="Home screen in light theme" width="540" height="1086"></div>
+      <div class="flex items-center gap-5 rounded-3xl bg-brand-50/70 p-5 sm:gap-6 sm:p-6">
+        <div class="phone !w-[96px] shrink-0 !rounded-[1.2rem] !border-[4px] sm:!w-[120px] sm:!rounded-[1.4rem] sm:!border-[5px]"><img loading="lazy" src="assets/screens/v3-home-light.webp" alt="Home screen in light theme" width="540" height="1086"></div>
         <div><p class="font-semibold">Material 3, refined</p><p class="mt-1 text-sm leading-relaxed text-muted">Expressive shapes, a morphing loader and native slide navigation, in light or dark.</p></div>
       </div>
     </div>
@@ -138,8 +156,8 @@
     <div class="grid items-center gap-12 lg:grid-cols-2">
       <div class="order-2 lg:order-1">
         <p class="label">Security centre</p>
-        <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">Know exactly where you're exposed.</h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted">A single score shows how healthy your passwords are, then points you to the weak, reused and old ones. Breach checks compare against known leaks using k-anonymity, so only the first five characters of a hash ever leave your phone.</p>
+        <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">Know exactly where you're exposed.</h2>
+        <p class="mt-5 text-base leading-relaxed text-muted sm:text-lg">A single score shows how healthy your passwords are, then points you to the weak, reused and old ones. Breach checks compare against known leaks using k-anonymity, so only the first five characters of a hash ever leave your phone.</p>
       </div>
       <div class="order-1 flex justify-center gap-6 lg:order-2">
         <div class="phone"><img loading="lazy" src="assets/screens/security-light.webp" alt="Security centre with score 85" width="540" height="1086"></div>
@@ -152,15 +170,15 @@
       </div>
       <div>
         <p class="label">Sharing</p>
-        <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">Share a password without sending it in a chat.</h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted">Items are encrypted to the other person's key on your phone. Share a one-time copy, or keep it in sync with view or edit access. When you remove someone, the item gets a new key so they can't read what changes next.</p>
+        <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">Share a password without sending it in a chat.</h2>
+        <p class="mt-5 text-base leading-relaxed text-muted sm:text-lg">Items are encrypted to the other person's key on your phone. Share a one-time copy, or keep it in sync with view or edit access. When you remove someone, the item gets a new key so they can't read what changes next.</p>
       </div>
     </div>
     <div class="grid items-center gap-12 lg:grid-cols-2">
       <div class="order-2 lg:order-1">
         <p class="label">Backup and recovery</p>
-        <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">Lose your phone, not your passwords.</h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted">Turn on Google Drive backup and Synapse keeps the latest five encrypted backups in a hidden folder only it can use. Set up a recovery kit and you can reset a forgotten master password, without ever giving us a key to your vault.</p>
+        <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">Lose your phone, not your passwords.</h2>
+        <p class="mt-5 text-base leading-relaxed text-muted sm:text-lg">Turn on Google Drive backup and Synapse keeps the latest five encrypted backups in a hidden folder only it can use. Set up a recovery kit and you can reset a forgotten master password, without ever giving us a key to your vault.</p>
       </div>
       <div class="order-1 flex justify-center gap-6 lg:order-2">
         <div class="phone"><img loading="lazy" src="assets/screens/drive-backup.webp" alt="Google Drive backup turned on" width="540" height="1086"></div>
@@ -168,15 +186,15 @@
       </div>
     </div>
     <div class="grid items-center gap-12 lg:grid-cols-2">
-      <div class="flex justify-center gap-4">
-        <div class="phone !w-[170px] sm:!w-[200px]"><img loading="lazy" src="assets/screens/home-rose.webp" alt="Home screen in Rose" width="540" height="1086"></div>
-        <div class="phone !w-[170px] translate-y-10 sm:!w-[200px]"><img loading="lazy" src="assets/screens/colour-picker.webp" alt="Colour picker in dark mode" width="540" height="1086"></div>
+      <div class="flex justify-center gap-3 sm:gap-4">
+        <div class="phone !w-[140px] sm:!w-[200px]"><img loading="lazy" src="assets/screens/home-rose.webp" alt="Home screen in Rose" width="540" height="1086"></div>
+        <div class="phone !w-[140px] translate-y-8 sm:!w-[200px] sm:translate-y-10"><img loading="lazy" src="assets/screens/colour-picker.webp" alt="Colour picker in dark mode" width="540" height="1086"></div>
         <div class="phone hidden !w-[200px] sm:block"><img loading="lazy" src="assets/screens/home-hindi.webp" alt="Home screen in Hindi" width="540" height="1086"></div>
       </div>
       <div>
         <p class="label">Made for you</p>
-        <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">Your colours. Your language.</h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted">Match your wallpaper with Material You, or pick from six colours in light or dark. Synapse is fully translated into Hindi, and unlocks with your fingerprint or face.</p>
+        <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">Your colours. Your language.</h2>
+        <p class="mt-5 text-base leading-relaxed text-muted sm:text-lg">Match your wallpaper with Material You, or pick from six colours in light or dark. Synapse is fully translated into Hindi, and unlocks with your fingerprint or face.</p>
       </div>
     </div>
   </div>
@@ -184,15 +202,15 @@
 
 <!-- Security (dark, technical) -->
 <section id="security" class="bg-night-900 text-white">
-  <div class="mx-auto max-w-7xl px-5 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-5 py-16 sm:py-24 lg:py-32">
     <div class="max-w-3xl">
       <p class="text-sm font-semibold uppercase tracking-wide text-brand-300">Security model</p>
-      <h2 class="h-display mt-4 text-4xl leading-tight sm:text-6xl">We designed Synapse so we never have to be trusted.</h2>
+      <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-6xl">We designed Synapse so we never have to be trusted.</h2>
       <p class="mt-6 text-lg leading-relaxed text-white/65">Your master password turns into two separate keys on your phone. One proves who you are. The other unlocks your vault, and it never leaves the device.</p>
     </div>
     <div class="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-2">
       <div class="min-w-0 rounded-3xl bg-night-800 p-5 sm:p-8">
-<pre class="overflow-x-auto font-mono text-[11.5px] leading-6 text-white/80 sm:text-[13px] sm:leading-7"><span class="text-white/40">// on your phone</span>
+<pre class="whitespace-pre-wrap break-words font-mono text-[11.5px] leading-6 text-white/80 sm:whitespace-pre sm:text-[13px] sm:leading-7"><span class="text-white/40">// on your phone</span>
 masterKey = <span class="text-brand-300">Argon2id</span>(password, salt, 64 MiB, t=3)
 authKey   = <span class="text-brand-300">HKDF-SHA256</span>(masterKey, "auth")
 kek       = <span class="text-brand-300">HKDF-SHA256</span>(masterKey, "kek")
@@ -221,9 +239,9 @@ Argon2id(authKey), wrapped vaultKey, ciphertext</pre>
 
 <!-- Free banner (full-width brand panel) -->
 <section class="px-3 py-3">
-  <div class="mx-auto max-w-[1400px] rounded-[28px] bg-brand-700 px-6 py-20 text-center text-white sm:py-28">
+  <div class="mx-auto max-w-[1400px] rounded-[24px] bg-brand-700 px-6 py-16 text-center text-white sm:rounded-[28px] sm:py-28">
     <p class="text-sm font-semibold uppercase tracking-wide text-brand-200">Free. Always.</p>
-    <h2 class="h-display mx-auto mt-5 max-w-3xl text-4xl leading-tight sm:text-6xl">Privacy shouldn't come with a monthly bill.</h2>
+    <h2 class="h-display mx-auto mt-5 max-w-3xl text-[32px] leading-tight sm:text-6xl">Privacy shouldn't come with a monthly bill.</h2>
     <div class="mx-auto mt-14 grid max-w-5xl gap-10 text-left sm:grid-cols-3">
       <div><h3 class="text-lg font-semibold">Cheap to run</h3><p class="mt-2 leading-relaxed text-white/75">The server only stores small encrypted files and never processes them, so running it costs very little per person.</p></div>
       <div><h3 class="text-lg font-semibold">Not the product</h3><p class="mt-2 leading-relaxed text-white/75">We can't read your data, so there's nothing to sell. No ads, trackers or analytics in the app.</p></div>
@@ -233,10 +251,10 @@ Argon2id(authKey), wrapped vaultKey, ciphertext</pre>
 </section>
 
 <!-- Pricing comparison -->
-<section id="pricing" class="mx-auto max-w-7xl px-5 py-24 sm:py-32">
+<section id="pricing" class="mx-auto max-w-7xl px-5 py-16 sm:py-24 lg:py-32">
   <div class="max-w-2xl">
     <p class="label">Compare</p>
-    <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">What a year of password security costs.</h2>
+    <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">What a year of password security costs.</h2>
     <p class="mt-5 text-lg text-muted">1Password and MEGA Pass are great products, with desktop apps and browser extensions Synapse doesn't have yet. Here's what they charge.</p>
   </div>
   <div class="mt-14 grid gap-6 lg:grid-cols-3">
@@ -265,10 +283,10 @@ Argon2id(authKey), wrapped vaultKey, ciphertext</pre>
 
 <!-- About -->
 <section id="about" class="border-t border-line bg-brand-50/60">
-  <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 py-24 sm:py-32 lg:grid-cols-2">
+  <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 py-16 sm:py-24 lg:py-32 lg:grid-cols-2">
     <div>
       <p class="label">About</p>
-      <h2 class="h-display mt-4 text-4xl leading-tight sm:text-5xl">Built by one developer, end to end.</h2>
+      <h2 class="h-display mt-4 text-[32px] leading-tight sm:text-5xl">Built by one developer, end to end.</h2>
       <div class="mt-6 space-y-4 text-lg leading-relaxed text-muted">
         <p>I'm Aman Jha, a software developer working on backend systems and Android apps. I built Synapse because every password manager I trusted wanted a monthly fee, and the free ones wanted more trust than I was willing to give.</p>
         <p>I wrote the Android app in Kotlin and Jetpack Compose, designed the encryption, and built the FastAPI sync server and its deployment. If Synapse is useful to you, following me is the best way to support it.</p>
@@ -298,7 +316,7 @@ Argon2id(authKey), wrapped vaultKey, ciphertext</pre>
 </section>
 
 <!-- FAQ -->
-<section class="mx-auto max-w-3xl px-5 py-24 sm:py-32">
+<section class="mx-auto max-w-3xl px-5 py-16 sm:py-24 lg:py-32">
   <h2 class="h-display text-center text-4xl sm:text-5xl">Questions</h2>
   <div class="mt-12 divide-y divide-line border-y border-line">
     <details class="group py-6"><summary class="flex cursor-pointer list-none items-center justify-between text-lg font-medium">What if I forget my master password?<span class="text-2xl font-light text-brand-700 transition group-open:rotate-45">+</span></summary><p class="mt-3 leading-relaxed text-muted">If you set up a recovery kit, you can reset it with your recovery key. Without one, nobody can open your vault, including us. Set up the kit in Settings → Account.</p></details>
@@ -312,7 +330,7 @@ Argon2id(authKey), wrapped vaultKey, ciphertext</pre>
 <!-- Download cards -->
 <section id="download" class="bg-night-900 px-5 py-24 text-white sm:py-32">
   <div class="mx-auto max-w-5xl">
-    <h2 class="h-display text-center text-4xl sm:text-6xl">Download Synapse</h2>
+    <h2 class="h-display text-center text-[34px] sm:text-6xl">Download Synapse</h2>
     <p class="mt-5 text-center text-lg text-white/60">Free on Android. Version 1.0.3, 8.4 MB.</p>
     <div class="mt-14 grid gap-5 md:grid-cols-2">
       <div class="rounded-3xl bg-white p-8 text-night-900">
@@ -335,8 +353,8 @@ Argon2id(authKey), wrapped vaultKey, ciphertext</pre>
 
 <!-- Footer -->
 <footer class="border-t border-white/10 bg-night-950 text-white">
-  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
-    <div>
+  <div class="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-5 py-14 lg:grid-cols-4">
+    <div class="col-span-2 lg:col-span-1">
       <a href="./" class="flex items-center gap-2.5 text-lg font-semibold"><img src="assets/icon.svg" alt="" class="h-8 w-8"> Synapse</a>
       <p class="mt-3 text-sm text-white/50">The password manager that can't read your passwords.</p>
     </div>
@@ -346,5 +364,9 @@ Argon2id(authKey), wrapped vaultKey, ciphertext</pre>
   </div>
   <div class="border-t border-white/10 py-6 text-center text-xs text-white/40">© 2026 Aman Jha · Synapse 1.0.3</div>
 </footer>
+<script>
+  // Close the phone menu after choosing a link.
+  document.querySelectorAll('header details nav a').forEach(a => a.addEventListener('click', () => a.closest('details').removeAttribute('open')));
+</script>
 </body>
 </html>

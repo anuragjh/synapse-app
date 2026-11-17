@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  [id] { scroll-margin-top: 72px; }
+}
+
 @layer components {
   .phone { @apply relative mx-auto w-[220px] sm:w-[250px] rounded-[2.2rem] border-[8px] border-night-800 bg-night-950 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)] overflow-hidden; }
   .phone img { @apply block w-full h-auto; }

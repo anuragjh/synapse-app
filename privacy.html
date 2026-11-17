@@ -1,56 +1,153 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Synapse Privacy Policy</title><meta name="description" content="How Synapse handles your data.">
-<link rel="stylesheet" href="style.css"></head><body><main>
-<header><div class="logo">S</div><strong>Synapse</strong><nav><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></header>
-<h1>Privacy policy</h1>
-<p class="lead">Last updated: 17 November 2026</p>
-<p>Synapse is built so that we cannot read your vault. This policy explains what data the Synapse app and server handle, and why.</p>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy policy · Synapse</title>
+<meta name="description" content="How the Synapse password manager handles your data: what we store, what we can never see, Google user data, retention and your rights.">
+<meta property="og:title" content="Synapse password manager">
+<meta property="og:description" content="Zero-knowledge, end-to-end encrypted, and free. Your vault is locked with a key only you hold.">
+<meta property="og:image" content="https://anuragjh.github.io/synapse-app/assets/screens/home-dark.webp">
+<meta name="theme-color" content="#0b0f0e">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="bg-ink-900 text-gray-200 font-sans antialiased">
+<!-- Header -->
+<header class="sticky top-0 z-40 border-b border-ink-700/70 bg-ink-900/85 backdrop-blur">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+    <a href="./" class="flex items-center gap-2.5 font-semibold text-white">
+      <img src="assets/favicon.svg" alt="" class="h-8 w-8"> Synapse
+    </a>
+    <nav class="hidden items-center gap-7 text-sm text-gray-400 md:flex">
+      <a href="./#features" class="hover:text-white">Features</a>
+      <a href="./#security" class="hover:text-white">Security</a>
+      <a href="./#screens" class="hover:text-white">Screens</a>
+      <a href="./#pricing" class="hover:text-white">Pricing</a>
+      <a href="./#about" class="hover:text-white">About</a>
+    </nav>
+    <a href="./#download" class="rounded-lg bg-brand-300 px-4 py-2 text-sm font-semibold text-ink-950 hover:bg-brand-200">Download</a>
+  </div>
+</header>
+<main class="mx-auto max-w-3xl px-4 py-16">
+<!-- title: Privacy policy · Synapse -->
+<!-- description: How the Synapse password manager handles your data: what we store, what we can never see, Google user data, retention and your rights. -->
+<p class="eyebrow">Legal</p>
+<h1 class="mt-3 text-4xl font-bold tracking-tight text-white">Privacy policy</h1>
+<p class="mt-3 font-mono text-sm text-gray-500">Effective 17 November 2026 · Version 2</p>
 
-<h2>Your vault</h2>
+<div class="prose-legal">
+<div class="card mt-10 p-6">
+<p class="!text-gray-200"><strong>The short version.</strong> Your vault is encrypted on your phone with a key only your master password can unlock. We store the encrypted result and a small amount of account data needed to sync it. We can't read your passwords, we don't sell anything, and the app contains no ads, trackers or analytics.</p>
+</div>
+
+<h2>1. Who we are</h2>
+<p>Synapse is a password manager for Android, developed and operated by Aman Jha ("Synapse", "we", "us"). This policy covers the Synapse Android app, the Synapse sync service, and this website. For questions or requests, see <a href="#contact">Contact</a>.</p>
+
+<h2>2. How Synapse is built to protect you</h2>
+<p>Synapse is designed so that we don't need to be trusted with your secrets:</p>
 <ul>
-<li>Your passwords, cards, notes and other items are encrypted on your device before they are stored or synced, using a key derived from your master password.</li>
-<li>Your master password never leaves your device. We cannot see it, recover it or reset it.</li>
-<li>The Synapse server stores only encrypted vault data plus the metadata needed to sync it (item IDs, revision numbers and timestamps).</li>
+<li>Your <strong>master password never leaves your device</strong>. It is stretched with Argon2id (64 MiB of memory, 3 passes) and split with HKDF-SHA256 into two independent keys.</li>
+<li>One key (the <em>authentication key</em>) proves who you are. The server stores only an Argon2id hash of it.</li>
+<li>The other key (the <em>key-encryption key</em>) never leaves the device. It unlocks a random 256-bit vault key, which encrypts each vault item separately with AES-256-GCM.</li>
+<li>Because of this, <strong>we cannot read, reset or recover your vault</strong>, and neither can anyone who gains access to our servers.</li>
 </ul>
 
-<h2>Account information</h2>
-<p>When you sign in with Google or GitHub, we receive and store:</p>
-<ul>
-<li>your account identifier at that provider, and</li>
-<li>your email address, if the provider shares it.</li>
-</ul>
-<p>We also store a randomly generated Synapse username, which you can change. We use this information only to identify your account and to let other users find you when you share items with them. We do not use it for advertising.</p>
+<h2>3. What we collect and why</h2>
+<table>
+<thead><tr><th>Data</th><th>Why we need it</th><th>Can we read it?</th><th>How long we keep it</th></tr></thead>
+<tbody>
+<tr><td>Google or GitHub account ID, and the email address the provider shares</td><td>To sign you in and keep your account linked to that provider</td><td>Yes</td><td>Until you unlink the provider or delete your account</td></tr>
+<tr><td>Synapse username (randomly generated, changeable)</td><td>To identify your account and let people share items with you</td><td>Yes</td><td>Until you delete your account</td></tr>
+<tr><td>Encrypted vault items, encrypted vault key, KDF salt and parameters</td><td>To sync your vault between devices</td><td>No (ciphertext). We see item count, sizes and timestamps</td><td>Until you delete the item or your account</td></tr>
+<tr><td>Argon2id hash of your authentication key</td><td>To verify sign-in to the vault and confirm sensitive actions</td><td>No (one-way hash)</td><td>Until you change your master password or delete your account</td></tr>
+<tr><td>Public sharing key, and your private sharing key encrypted by your vault key</td><td>To receive end-to-end encrypted shared items</td><td>Public key: yes. Private key: no</td><td>Until you delete your account</td></tr>
+<tr><td>Shared items and their member list</td><td>To deliver items you share and enforce view/edit permissions</td><td>Contents: no. Who has access: yes</td><td>Until the share is removed or the owner's account is deleted</td></tr>
+<tr><td>Recovery kit verifier and recovery-wrapped vault key (only if you set one up)</td><td>To let you reset a forgotten master password</td><td>No</td><td>Until you turn it off or delete your account</td></tr>
+<tr><td>Sessions: device name, sign-in time, last use</td><td>To keep you signed in and let you sign out other devices</td><td>Yes</td><td>Up to 30 days, or until you sign out</td></tr>
+<tr><td>Security events: sign-ins, password changes, recovery and sharing activity, with the device name</td><td>To show you account activity and detect abuse</td><td>Yes</td><td>Until you delete your account</td></tr>
+<tr><td>Firebase Cloud Messaging token</td><td>To tell your devices to sync and to send sign-in and share alerts</td><td>Yes (it identifies a device, not you)</td><td>Until you sign out or delete your account</td></tr>
+<tr><td>Server access logs: IP address, time, request path, response code</td><td>Security, rate limiting and troubleshooting</td><td>Yes</td><td>About 14 days, then deleted by log rotation</td></tr>
+</tbody>
+</table>
+<p>We don't collect your contacts, location, photos, advertising ID or usage analytics.</p>
 
-<h2>Google user data</h2>
+<h2>4. Data that stays on your device</h2>
+<p>Some data never leaves your phone: your master password, the decrypted vault while it's unlocked, your biometric unlock key (held in the Android Keystore, which we can't extract), app settings, and the password-health analysis (weak, reused and old password checks run entirely on the device).</p>
+
+<h2>5. Google user data</h2>
 <p>Synapse requests these Google permissions:</p>
 <ul>
 <li><strong>Sign-in (openid, email, profile):</strong> used only to sign you in and link your Google account to your Synapse account.</li>
-<li><strong>Google Drive app data folder (drive.appdata):</strong> requested only if you turn on "Back up to Google Drive". Synapse uses it to save, list, download and delete its own encrypted backup files in a hidden folder of your Drive. Synapse cannot see, read or change any other files in your Drive. Backup files are encrypted on your device, so neither Google nor Synapse can read them. They go straight from your phone to Google; they never pass through the Synapse server.</li>
+<li><strong>Google Drive app data folder (<code>drive.appdata</code>):</strong> requested only when you turn on "Back up to Google Drive". Synapse uses it to create, list, download and delete its own encrypted backup files in a hidden folder of your Drive. Synapse can't see, open or change any other file in your Drive.</li>
 </ul>
-<p>Synapse's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. We do not sell Google user data, use it for advertising, or let humans read it.</p>
+<p>Drive backups are encrypted on your device before upload, so neither Google nor Synapse can read them. They go directly from your phone to Google and never pass through Synapse servers.</p>
+<p>Synapse's use and transfer of information received from Google APIs to any other app adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. We don't use Google user data for advertising, don't sell it, don't use it to train AI models, and don't let people read it except where you ask us to for support, it's needed for security, or the law requires it.</p>
 
-<h2>Security and device data</h2>
+<h2>6. Third-party services we use</h2>
+<table>
+<thead><tr><th>Service</th><th>What it receives</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Google (Sign-In, Drive)</td><td>Sign-in requests; your encrypted backups if you turn on Drive backup</td><td>Sign-in, optional backup</td></tr>
+<tr><td>GitHub</td><td>OAuth sign-in requests</td><td>Sign-in</td></tr>
+<tr><td>Firebase Cloud Messaging (Google)</td><td>Device token and data-only messages with event types and IDs (never vault content)</td><td>Sync and security notifications</td></tr>
+<tr><td>Have I Been Pwned</td><td>The first 5 characters of a SHA-1 hash of a password, only when you run a breach check</td><td>Detecting breached passwords (k-anonymity: the password itself is never sent)</td></tr>
+<tr><td>Server hosting provider</td><td>Encrypted data and logs stored on our server</td><td>Running the sync service</td></tr>
+<tr><td>GitHub Pages</td><td>Standard web request data when you visit this website</td><td>Hosting this website and the APK download</td></tr>
+</tbody>
+</table>
+
+<h2>7. Sharing between users</h2>
+<p>When you share an item, it is encrypted on your device to each recipient's public key. We store the encrypted item and who has access, so we can deliver it and enforce permissions, but we can't read it. People you share with can see the item's contents, and with edit access they can change it.</p>
+
+<h2>8. What we never do</h2>
 <ul>
-<li>Signed-in sessions: the device name, the time of sign-in and the last time the session was used. You can see these and sign sessions out from the app.</li>
-<li>Security events: for example, a new sign-in. These are shown to you in the app.</li>
-<li>Push notifications: a Firebase Cloud Messaging token, so that your other devices can be told to sync. Notifications never contain vault contents.</li>
-<li>Exposed password checks use the k-anonymity range API of Have I Been Pwned. Only the first 5 characters of a SHA-1 hash leave your device, never the password itself.</li>
+<li>Sell, rent or trade personal data</li>
+<li>Show ads, or include ad, tracking or analytics SDKs in the app</li>
+<li>Use your data to train AI models</li>
+<li>Build profiles of you</li>
 </ul>
 
-<h2>Sharing</h2>
-<p>When you share an item, it is encrypted for each recipient's public key on your device. The server stores the encrypted item and who it is shared with, but cannot read the item.</p>
+<h2>9. Security</h2>
+<p>Besides end-to-end encryption, we use HTTPS for all traffic, rate-limit sign-in and recovery attempts, store session tokens only as hashes, keep secrets out of source code, and run the service in isolated containers. No system is perfectly secure, so the design aims to keep your vault safe even if the server is compromised.</p>
 
-<h2>Retention and deletion</h2>
-<p>You can delete your account from Settings → Account. This removes your account, sessions and encrypted vault from the server. Google Drive backups stay in your Drive until you remove Synapse's access in your Google Account settings (which deletes its hidden app data) or delete them yourself.</p>
-
-<h2>What we don't do</h2>
+<h2>10. Your rights and choices</h2>
 <ul>
-<li>No ads.</li>
-<li>No sale of personal data.</li>
-<li>No third-party analytics or tracking SDKs.</li>
+<li><strong>Access and export:</strong> view your account, devices and activity in Settings → Account, and export your vault (encrypted or as CSV) in Settings → Backup &amp; transfer.</li>
+<li><strong>Correction:</strong> change your username, unlink providers and change your master password in the app.</li>
+<li><strong>Deletion:</strong> Settings → Account → Delete account permanently deletes your account and all associated server data, confirmed with your master password. You can also choose to delete your Google Drive backups at the same time.</li>
+<li><strong>Revoking Google access:</strong> remove Synapse at <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>. This also deletes its hidden Drive data.</li>
 </ul>
+<p>Depending on where you live, laws such as India's Digital Personal Data Protection Act 2023 or the EU GDPR may give you further rights, including to complain to a data protection authority. Contact us to exercise any of them.</p>
 
-<h2>Contact</h2>
-<p>Questions or requests: <a href="https://github.com/anuragjh/synapse-app/issues">open an issue</a>.</p>
-<footer>Synapse · <a href="./">Home</a> · <a href="terms.html">Terms of service</a></footer>
-</main></body></html>
+<h2>11. Children</h2>
+<p>Synapse isn't directed at children under 13, and we don't knowingly collect their data. If you believe a child has created an account, contact us and we will delete it.</p>
+
+<h2>12. International transfers</h2>
+<p>Our server and the third-party services above may process data in countries other than yours. Vault contents are always end-to-end encrypted wherever they're stored.</p>
+
+<h2>13. Changes to this policy</h2>
+<p>We'll update this page when our practices change, and change the version and date at the top. If a change is significant, we'll tell you in the app before it takes effect.</p>
+
+<h2 id="contact">14. Contact</h2>
+<p>For privacy questions or requests, <a href="https://github.com/anuragjh/synapse-app/issues">open an issue</a> or message the developer on <a href="https://www.linkedin.com/in/aman-jha-393468318/">LinkedIn</a>. See also our <a href="terms.html">Terms of service</a>.</p>
+</div>
+
+</main>
+<!-- Footer -->
+<footer class="border-t border-ink-700">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <a href="./" class="flex items-center gap-2.5 font-semibold text-white"><img src="assets/favicon.svg" alt="" class="h-7 w-7"> Synapse</a>
+      <p class="mt-3 text-sm text-gray-500">The password manager that can't read your passwords.</p>
+    </div>
+    <div><h3 class="text-sm font-semibold text-white">Product</h3><ul class="mt-3 space-y-2 text-sm text-gray-500"><li><a href="./#features" class="hover:text-gray-200">Features</a></li><li><a href="./#security" class="hover:text-gray-200">Security model</a></li><li><a href="./#pricing" class="hover:text-gray-200">Pricing</a></li><li><a href="./#download" class="hover:text-gray-200">Download</a></li></ul></div>
+    <div><h3 class="text-sm font-semibold text-white">Legal</h3><ul class="mt-3 space-y-2 text-sm text-gray-500"><li><a href="privacy.html" class="hover:text-gray-200">Privacy policy</a></li><li><a href="terms.html" class="hover:text-gray-200">Terms of service</a></li><li><a href="https://github.com/anuragjh/synapse-app/issues" class="hover:text-gray-200">Report a problem</a></li></ul></div>
+    <div><h3 class="text-sm font-semibold text-white">Developer</h3><ul class="mt-3 space-y-2 text-sm text-gray-500"><li><a href="https://github.com/anuragjh" class="hover:text-gray-200">GitHub</a></li><li><a href="https://www.linkedin.com/in/aman-jha-393468318/" class="hover:text-gray-200">LinkedIn</a></li><li><a href="./#about" class="hover:text-gray-200">About</a></li></ul></div>
+  </div>
+  <div class="border-t border-ink-700 py-6 text-center text-xs text-gray-600">© 2026 Aman Jha · Synapse 1.0.2 · UI blocks adapted from <a href="https://mambaui.com" class="hover:text-gray-400">Mamba UI</a> (MIT)</div>
+</footer>
+</body>
+</html>

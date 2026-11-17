@@ -9,3 +9,7 @@ h1{font-size:2.2rem;line-height:1.2;margin:0 0 12px}h2{margin-top:36px;font-size
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.card h3{margin:0 0 6px;font-size:1rem}.card p{margin:0;color:var(--muted);font-size:.95rem}
 footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 li{margin:4px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px}
+.btn:hover{filter:brightness(1.08)}
+@media (prefers-color-scheme:dark){.btn{color:#0f1218}}
+code{font-size:.9em}

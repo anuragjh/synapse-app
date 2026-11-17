@@ -7,40 +7,41 @@
 <meta name="description" content="The terms for using the Synapse password manager app and sync service.">
 <meta property="og:title" content="Synapse password manager">
 <meta property="og:description" content="Zero-knowledge, end-to-end encrypted, and free. Your vault is locked with a key only you hold.">
-<meta property="og:image" content="https://anuragjh.github.io/synapse-app/assets/screens/home-dark.webp">
-<meta name="theme-color" content="#0b0f0e">
+<meta property="og:image" content="https://anuragjh.github.io/synapse-app/assets/icon-512.png">
+<meta name="theme-color" content="#0e1412">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="bg-ink-900 text-gray-200 font-sans antialiased">
+<body class="bg-white font-sans text-night-900 antialiased">
 <!-- Header -->
-<header class="sticky top-0 z-40 border-b border-ink-700/70 bg-ink-900/85 backdrop-blur">
-  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-    <a href="./" class="flex items-center gap-2.5 font-semibold text-white">
-      <img src="assets/favicon.svg" alt="" class="h-8 w-8"> Synapse
+<header class="sticky top-0 z-40 border-b border-white/10 bg-night-900/95 text-white backdrop-blur">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
+    <a href="./" class="flex items-center gap-2.5 text-[17px] font-semibold tracking-tight">
+      <img src="assets/icon.svg" alt="" class="h-8 w-8"> Synapse
     </a>
-    <nav class="hidden items-center gap-7 text-sm text-gray-400 md:flex">
+    <nav class="hidden items-center gap-8 text-[15px] text-white/70 md:flex">
       <a href="./#features" class="hover:text-white">Features</a>
       <a href="./#security" class="hover:text-white">Security</a>
-      <a href="./#screens" class="hover:text-white">Screens</a>
       <a href="./#pricing" class="hover:text-white">Pricing</a>
       <a href="./#about" class="hover:text-white">About</a>
     </nav>
-    <a href="./#download" class="rounded-lg bg-brand-300 px-4 py-2 text-sm font-semibold text-ink-950 hover:bg-brand-200">Download</a>
+    <a href="./#download" class="pill-light !px-5 !py-2 text-sm">Download</a>
   </div>
 </header>
-<main class="mx-auto max-w-3xl px-4 py-16">
+<main class="mx-auto max-w-3xl px-5 py-20">
 <!-- title: Terms of service · Synapse -->
 <!-- description: The terms for using the Synapse password manager app and sync service. -->
-<p class="eyebrow">Legal</p>
-<h1 class="mt-3 text-4xl font-bold tracking-tight text-white">Terms of service</h1>
-<p class="mt-3 font-mono text-sm text-gray-500">Effective 17 November 2026 · Version 2</p>
+<p class="label">Legal</p>
+<h1 class="h-display mt-4 text-5xl sm:text-6xl">Terms of service</h1>
+<p class="mt-4 text-sm text-muted">Effective 17 November 2026 · Version 2</p>
 
 <div class="prose-legal">
-<div class="card mt-10 p-6">
-<p class="!text-gray-200"><strong>The short version.</strong> Synapse is free. Your vault is yours, and it's encrypted so we can't read it. That also means we can't recover it if you lose your master password and have no recovery kit. Use Synapse lawfully, keep your master password safe, and keep a backup.</p>
+<div class="mt-10 rounded-3xl bg-brand-50 p-7">
+<p class="!text-night-900"><strong>The short version.</strong> Synapse is free. Your vault is yours, and it's encrypted so we can't read it. That also means we can't recover it if you lose your master password and have no recovery kit. Use Synapse lawfully, keep your master password safe, and keep a backup.</p>
 </div>
 
 <h2>1. Agreement</h2>
@@ -116,17 +117,17 @@
 
 </main>
 <!-- Footer -->
-<footer class="border-t border-ink-700">
-  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
+<footer class="border-t border-white/10 bg-night-950 text-white">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
     <div>
-      <a href="./" class="flex items-center gap-2.5 font-semibold text-white"><img src="assets/favicon.svg" alt="" class="h-7 w-7"> Synapse</a>
-      <p class="mt-3 text-sm text-gray-500">The password manager that can't read your passwords.</p>
+      <a href="./" class="flex items-center gap-2.5 text-lg font-semibold"><img src="assets/icon.svg" alt="" class="h-8 w-8"> Synapse</a>
+      <p class="mt-3 text-sm text-white/50">The password manager that can't read your passwords.</p>
     </div>
-    <div><h3 class="text-sm font-semibold text-white">Product</h3><ul class="mt-3 space-y-2 text-sm text-gray-500"><li><a href="./#features" class="hover:text-gray-200">Features</a></li><li><a href="./#security" class="hover:text-gray-200">Security model</a></li><li><a href="./#pricing" class="hover:text-gray-200">Pricing</a></li><li><a href="./#download" class="hover:text-gray-200">Download</a></li></ul></div>
-    <div><h3 class="text-sm font-semibold text-white">Legal</h3><ul class="mt-3 space-y-2 text-sm text-gray-500"><li><a href="privacy.html" class="hover:text-gray-200">Privacy policy</a></li><li><a href="terms.html" class="hover:text-gray-200">Terms of service</a></li><li><a href="https://github.com/anuragjh/synapse-app/issues" class="hover:text-gray-200">Report a problem</a></li></ul></div>
-    <div><h3 class="text-sm font-semibold text-white">Developer</h3><ul class="mt-3 space-y-2 text-sm text-gray-500"><li><a href="https://github.com/anuragjh" class="hover:text-gray-200">GitHub</a></li><li><a href="https://www.linkedin.com/in/aman-jha-393468318/" class="hover:text-gray-200">LinkedIn</a></li><li><a href="./#about" class="hover:text-gray-200">About</a></li></ul></div>
+    <div><p class="text-sm font-semibold">Product</p><ul class="mt-4 space-y-2.5 text-sm text-white/55"><li><a href="./#features" class="hover:text-white">Features</a></li><li><a href="./#security" class="hover:text-white">Security</a></li><li><a href="./#pricing" class="hover:text-white">Pricing</a></li><li><a href="./#download" class="hover:text-white">Download</a></li></ul></div>
+    <div><p class="text-sm font-semibold">Legal</p><ul class="mt-4 space-y-2.5 text-sm text-white/55"><li><a href="privacy.html" class="hover:text-white">Privacy policy</a></li><li><a href="terms.html" class="hover:text-white">Terms of service</a></li><li><a href="https://github.com/anuragjh/synapse-app/issues" class="hover:text-white">Report a problem</a></li></ul></div>
+    <div><p class="text-sm font-semibold">Developer</p><ul class="mt-4 space-y-2.5 text-sm text-white/55"><li><a href="https://github.com/anuragjh" class="hover:text-white">GitHub</a></li><li><a href="https://www.linkedin.com/in/aman-jha-393468318/" class="hover:text-white">LinkedIn</a></li><li><a href="./#about" class="hover:text-white">About</a></li></ul></div>
   </div>
-  <div class="border-t border-ink-700 py-6 text-center text-xs text-gray-600">© 2026 Aman Jha · Synapse 1.0.2 · UI blocks adapted from <a href="https://mambaui.com" class="hover:text-gray-400">Mamba UI</a> (MIT)</div>
+  <div class="border-t border-white/10 py-6 text-center text-xs text-white/40">© 2026 Aman Jha · Synapse 1.0.2</div>
 </footer>
 </body>
 </html>

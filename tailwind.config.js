@@ -1,14 +1,15 @@
-/** Tailwind build for the Synapse site. Run: npx tailwindcss@3.4.17 -i src/input.css -o assets/site.css --minify */
+/** Tailwind build for the Synapse site. Run: python3 src/build.py */
 module.exports = {
-  content: ['./*.html'],
-  darkMode: 'media',
+  content: ['./*.html', './src/pages/*.html'],
   theme: {
     extend: {
       colors: {
-        brand: { 50:'#e8fbf4',100:'#c4f3e2',200:'#9ff2d9',300:'#83d6be',400:'#4fbfa1',500:'#1f9f82',600:'#006c5a',700:'#005143',800:'#00382d',900:'#00201a' },
-        ink: { 950:'#070a09', 900:'#0b0f0e', 850:'#101614', 800:'#151c1a', 700:'#1f2826', 600:'#2c3633' },
+        brand: { 50:'#ecf8f4',100:'#d3efe6',200:'#9ff2d9',300:'#7ee8c8',400:'#3fbf9c',500:'#119679',600:'#0e7c66',700:'#006c5a',800:'#07463a',900:'#00201a' },
+        night: { 950:'#080c0b', 900:'#0e1412', 800:'#151d1a', 700:'#1f2a26', 600:'#2c3833' },
+        line: '#e4ebe8',
+        muted: '#5d6b66',
       },
-      fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['"JetBrains Mono"','ui-monospace','monospace'] },
+      fontFamily: { sans: ['Inter','system-ui','sans-serif'], display: ['"Inter Tight"','Inter','system-ui','sans-serif'], mono: ['"JetBrains Mono"','ui-monospace','monospace'] },
     },
   },
 }

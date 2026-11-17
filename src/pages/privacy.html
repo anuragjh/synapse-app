@@ -2,7 +2,7 @@
 <!-- description: How the Synapse password manager handles your data: what we store, what we can never see, Google user data, retention and your rights. -->
 <p class="label">Legal</p>
 <h1 class="h-display mt-4 text-5xl sm:text-6xl">Privacy policy</h1>
-<p class="mt-4 text-sm text-muted">Effective 17 November 2026 · Version 2</p>
+<p class="mt-4 text-sm text-muted">Effective 18 November 2026 · Version 3</p>
 
 <div class="prose-legal">
 <div class="mt-10 rounded-3xl bg-brand-50 p-7">
@@ -52,6 +52,13 @@
 <p>Drive backups are encrypted on your device before upload, so neither Google nor Synapse can read them. They go directly from your phone to Google and never pass through Synapse servers.</p>
 <p>Synapse's use and transfer of information received from Google APIs to any other app adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. We don't use Google user data for advertising, don't sell it, don't use it to train AI models, and don't let people read it except where you ask us to for support, it's needed for security, or the law requires it.</p>
 
+<h2>5a. Login icons and app updates</h2>
+<ul>
+<li><strong>Service icons</strong> for well-known sites are built into the app and matched on your phone. Nothing is sent anywhere.</li>
+<li><strong>Website icons</strong> (optional, on by default, Settings → Website icons): for other logins, the app asks that website directly for its own icon over HTTPS, without cookies or a referrer, and stores it on your phone. That website can see that a device requested its icon, as it would if you visited it. No third-party icon service and no Synapse server is involved.</li>
+<li><strong>Update checks</strong>: the app downloads a small public version file and, when there’s a new version, the new APK from the Synapse server. These requests contain no account or vault data.</li>
+</ul>
+
 <h2>6. Third-party services we use</h2>
 <div class="-mx-5 overflow-x-auto px-5"><table class="min-w-[560px]">
 <thead><tr><th>Service</th><th>What it receives</th><th>Purpose</th></tr></thead>
@@ -61,6 +68,7 @@
 <tr><td>Firebase Cloud Messaging (Google)</td><td>Device token and data-only messages with event types and IDs (never vault content)</td><td>Sync and security notifications</td></tr>
 <tr><td>Have I Been Pwned</td><td>The first 5 characters of a SHA-1 hash of a password, only when you run a breach check</td><td>Detecting breached passwords (k-anonymity: the password itself is never sent)</td></tr>
 <tr><td>Server hosting provider</td><td>Encrypted data and logs stored on our server</td><td>Running the sync service</td></tr>
+<tr><td>Login websites (optional)</td><td>A request for the site’s own icon, only for logins without a built-in icon</td><td>Showing website icons</td></tr>
 <tr><td>GitHub Pages</td><td>Standard web request data when you visit this website</td><td>Hosting this website and the APK download</td></tr>
 </tbody>
 </table></div>
